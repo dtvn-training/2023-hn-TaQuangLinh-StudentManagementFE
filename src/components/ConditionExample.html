@@ -1,0 +1,32 @@
+<html>
+    <head>    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>You are Doctor?</p>
+            <p v-if="isDoctor && selected">Yes, I'm doctor</p>
+            <p v-else-if="selected">No, I'm not doctor</p>
+            <button @click="isDoctor=true; selected=true">Yes</button>
+            <button @click="isDoctor=false; selected=true">No</button>
+            <button @click="isDoctor=false; selected=false">Refesh</button>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                   isDoctor: false,
+                   selected: false,
+                },
+                methods: {
+                    
+                },
+                watch: {
+                    isDoctor: function (){
+                        console.log(this.isDoctor);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

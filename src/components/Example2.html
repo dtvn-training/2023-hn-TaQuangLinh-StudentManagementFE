@@ -1,0 +1,46 @@
+<html>
+    <head>    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <style>
+            .square {
+                background-color: rgb(165, 42, 42);
+                width: 100px;
+                height: 100px;
+                display: inline-block;
+                margin: 10px;
+                border-radius: 20%;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div class="square" :style="customStyles()"></div> 
+            <div class="square" :style=""></div> 
+            <div class="square" :style=""></div>  
+            <br>
+            <input type="text" v-model="color">
+            <input type="text" v-model="width">
+            <input type="text" v-model="height">
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                  color: "gray",
+                  width: 100,
+                  height: 100,
+                },
+                methods: {
+                    customStyles: function() { 
+                        return {
+                            backgroundColor: this.color,
+                            width: this.width + "px",
+                            height: this.height + "px",
+                        }
+                    }
+                },
+            });
+        </script>
+    </body>
+</html>

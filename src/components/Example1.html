@@ -1,0 +1,54 @@
+<html>
+    <head>    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <style>
+            .square {
+                background-color: gray;
+                width: 100px;
+                height: 100px;
+                display: inline-block;
+                margin: 10px;
+            }
+            .red {
+                background-color: red;
+            }
+            .borderRadius {
+                border-radius: 20%;
+            }
+            .blue {
+                background-color: blue;
+            }
+            .green {
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div class="square" @click="red=true; blue=false" :class="{red: red, blue: blue}"></div>  
+            <div class="square" @click="blue=true; red=false" :class="{red: red, blue: blue}"></div>
+            <div class="square" @click="blue=true; red=false" :class="{red: red, blue: blue}"></div>
+            <div class="square" :class="color"></div>
+            <br>
+            <input type="text" v-model="color">
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    red : false,
+                    blue : false,
+                    color: "",
+                },
+                methods: {
+                    
+                },
+                watch: {
+                    red: function (){
+                        console.log(this.red);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
