@@ -75,5 +75,37 @@ v-show: hiện/ẩn phần tử
 
 VueJs tạo ra một virtual DOM 
 
-Tham khảo thêm về api trong link
+Tham khảo thêm về api trong vue
 https://vi.vuejs.org/v2/api/#Global-Config
+
+#Development Workflow
+
+Truyền data từ con -> cha
+this.$emit = ('nameEvent', object)
+@nameEvent(count = $event);
+
+c2: Sử dụng callback
+
+slot tag?
+multiple slot?? use name
+default slot: Được mặc định bởi vuej, không có tên(<slot></slot>)
+and slot default: Định nghĩa giá trị cho slot (<slot>The subtitle</slot>)
+
+component tag
+<conponent :is="selectionComponent"></conponent>
+
+Khi chuyển các component, component đó sẽ bị destroy lifecylce mới sẽ được sinh ra
+
+Muốn giữ cho các component alive??
+<keepAvlive>
+    <conponent :is="selectionComponent"></conponent>
+</keepAvlive>
+
+Component LifeCycle Hooks: Là hàm đặc biệt xử lí cho chức năng nào đó.
+
+deactivated: Tạm dừng sử dụng component
+activated: Kích hoạt sử dụng component
+![Alt text](image-1.png)
+
+
+
